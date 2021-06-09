@@ -23,12 +23,15 @@ faiss==1.7.0
 **MSMARCO Passage Ranking**
 
  Tokenized data and model checkpoint [link](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg/)
+ Hard negative data and model checkpoint [link](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-hn/)
  
  *more to be added soon*
 ## Usage
 The following sections will work through how to use this code base to train and retrieve over the MSMARCO passage ranking data set.
 ## Training
-The following code launch training for msmarco passage.
+You can download the train file `psg-train.tar.gz` for BERT from our resource [link](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg/). Alternatively, you can run pre-processing by yourself following the pre-processing [instructions](data_helpers).
+
+Extract the training set from the tar ball and run the following code to launch training for msmarco passage.
 ```
 python run_marco.py \  
   --output_dir $OUTDIR \  
@@ -54,7 +57,9 @@ python run_marco.py \
 
 
 ## Encoding
-Encode the corpus splits,
+After training, you can encode the corpus splits and queries.
+
+You can download pre-processed data for BERT, `corpus.tar.gz, queries.{dev, eval}.small.json` [here](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg/). 
 ```
 for i in $(seq -f "%02g" 0 99)  
 do  
