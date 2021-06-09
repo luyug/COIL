@@ -39,7 +39,7 @@ python run_marco.py \
   --model_name_or_path bert-base-uncased \  
   --do_train \  
   --save_steps 4000 \  
-  --train_dir $TRAIN_DIR \  
+  --train_dir /path/to/psg-train \  
   --q_max_len 16 \  
   --p_max_len 128 \  
   --fp16 \  
@@ -82,7 +82,31 @@ do
     --encoded_save_path ${ENCODE_OUT_DIR}/split${i}
 done
 ```
-Encode the queries,
+If on a cluster, the encoding loop can be paralellized. For example, say if you are on a SLURM cluster, use `srun`,
+```
+for i in $(seq -f "%02g" 0 99)  
+do  
+  mkdir ${ENCODE_OUT_DIR}/split${i}  
+  srun --ntasks=1 -c4 --mem=16000 -t0 --gres=gpu:1 python run_marco.py \  
+    --output_dir $ENCODE_OUT_DIR \  
+    --model_name_or_path $CKPT_DIR \  
+    --tokenizer_name bert-base-uncased \  
+    --token_dim 768 \  
+    --cls_dim 32 \  
+    --do_encode \  
+    --no_sep \  
+    --p_max_len 128 \  
+    --pooling max \  
+    --fp16 \  
+    --per_device_eval_batch_size 128 \  
+    --dataloader_num_workers 12 \  
+    --encode_in_path ${TOKENIZED_DIR}/split${i} \  
+    --encoded_save_path ${ENCODE_OUT_DIR}/split${i}&
+done
+```
+
+
+Then encode the queries,
 ```
 python run_marco.py \  
   --output_dir $ENCODE_QRY_OUT_DIR \  
@@ -104,6 +128,8 @@ Note that here `p_max_len` always controls the maximum length of the encoded tex
 
 ## Retrieval
 To do retrieval, run the following steps, 
+
+(Note that there is no dependency in the for loop within each step, meaning that if you are on a cluster, you can distribute the jobs across nodes using `srun` or `qsub`.)
 
 1) build document index shards
 ```
