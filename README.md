@@ -69,8 +69,8 @@ do
     --output_dir $ENCODE_OUT_DIR \  
     --model_name_or_path $CKPT_DIR \  
     --tokenizer_name bert-base-uncased \  
-    --token_dim 768 \  
-    --cls_dim 32 \  
+    --cls_dim 768 \  
+    --token_dim 32 \  
     --do_encode \  
     --no_sep \  
     --p_max_len 128 \  
@@ -91,8 +91,8 @@ do
     --output_dir $ENCODE_OUT_DIR \  
     --model_name_or_path $CKPT_DIR \  
     --tokenizer_name bert-base-uncased \  
-    --token_dim 768 \  
-    --cls_dim 32 \  
+    --cls_dim 768 \  
+    --token_dim 32 \  
     --do_encode \  
     --no_sep \  
     --p_max_len 128 \  
@@ -112,8 +112,8 @@ python run_marco.py \
   --output_dir $ENCODE_QRY_OUT_DIR \  
   --model_name_or_path $CKPT_DIR \  
   --tokenizer_name bert-base-uncased \  
-  --token_dim 768 \  
-  --cls_dim 32 \  
+  --cls_dim 768 \  
+  --token_dim 32 \  
   --do_encode \  
   --p_max_len 16 \  
   --fp16 \  
