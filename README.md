@@ -25,7 +25,7 @@ faiss==1.7.0
 | Configuration | MARCO DEV MRR@10 | TREC DL19 NDCG@5 | TREC DL19 NDCG@5 | Chekpoint | MARCO Train Ranking | MARCO Dev Ranking |
 | --- | :---: |  :---: | :---: | :---: | :---: | :---: | 
 | COIL w/o HN   | 0.353       | 0.7136      | 0.7285       | [model-checkpoint.tar.gz](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg/model-checkpoint.tar.gz) | [train-ranking.tar.gz](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-ranking/first-round/train-ranking.tar.gz)       | [dev-ranking.tsv](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-ranking/first-round/dev-ranking.tsv)      
-| COIL w/ HN    | 0.373       | 0.7453      | 0.7055       | [hn-checkpoint.tar.gz](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-hn/hn-checkpoint.tar.gz)      |  [train-ranking.tar.gz](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-ranking/hn/train-ranking.tar.gz)       | [dev-ranking.tsv](http://boston.lti.cs.cmu.edu/luyug/coilmsmarco-psg-ranking/hn/dev-ranking.tsv)      
+| COIL w/ HN    | 0.373       | 0.7453      | 0.7055       | [hn-checkpoint.tar.gz](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-hn/hn-checkpoint.tar.gz)      |  [train-ranking.tar.gz](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-ranking/hn/train-ranking.tar.gz)       | [dev-ranking.tsv](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-ranking/hn/dev-ranking.tsv)      
 
 * *The COIL w/o HN model was a rerun as we lost the original checkpoint. There's a light difference in dev performance, about 0.5% and some improvement on the DL2019 test.*
 
