@@ -23,7 +23,7 @@ faiss==1.7.0
 ### MSMARCO Passage Ranking
 Here we present two systems: one uses hard negatives (HN) and the other does not.  COIL w/o HN is trained with BM25 negatives, and COIL w/ HN is trained in addition with hard negatives mined with another trained COIL.
 
-| Configuration | MARCO DEV MRR@10 | TREC DL19 NDCG@5 | TREC DL19 NDCG@5 | Chekpoint | MARCO Train Ranking | MARCO Dev Ranking |
+| Configuration | MARCO DEV MRR@10 | TREC DL19 NDCG@5 | TREC DL19 NDCG@10 | Chekpoint | MARCO Train Ranking | MARCO Dev Ranking |
 | --- | :---: |  :---: | :---: | :---: | :---: | :---: | 
 | COIL w/o HN   | 0.353       | 0.7285      | 0.7136       | [model-checkpoint.tar.gz](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg/model-checkpoint.tar.gz) | [train-ranking.tar.gz](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-ranking/first-round/train-ranking.tar.gz)       | [dev-ranking.tsv](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-ranking/first-round/dev-ranking.tsv)      
 | COIL w/ HN    | 0.373       | 0.7453      | 0.7055       | [hn-checkpoint.tar.gz](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-hn/hn-checkpoint.tar.gz)      |  [train-ranking.tar.gz](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-ranking/hn/train-ranking.tar.gz)       | [dev-ranking.tsv](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-ranking/hn/dev-ranking.tsv)      
