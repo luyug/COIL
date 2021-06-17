@@ -39,7 +39,7 @@ class COILTrainer(Trainer):
         if self.args.warmup_ratio > 0:
             self.args.warmup_steps = num_training_steps * self.args.warmup_ratio
 
-        super().create_optimizer_and_scheduler(self.args.warmup_steps)
+        super().create_optimizer_and_scheduler(num_training_steps)
 
     def get_train_dataloader(self) -> DataLoader:
         if self.train_dataset is None:
