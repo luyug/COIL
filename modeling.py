@@ -82,6 +82,10 @@ class COIL(nn.Module):
         if self.model_args.token_norm_after:
             qry_reps, doc_reps = self.ln_tok(qry_reps), self.ln_tok(doc_reps)
 
+        if self.model_args.relu:
+            qry_reps = nn.ReLU()(qry_reps)
+            doc_reps = nn.ReLU()(doc_reps)
+
         # mask ingredients
         doc_input_ids: Tensor = doc_input['input_ids']
         qry_input_ids: Tensor = qry_input['input_ids']
