@@ -18,9 +18,9 @@ For doc2query generation, please see [docTTTTTquery](https://github.com/castorin
 repo for details
 
 ## Resource
-- `psg-train-d2q` : train data with d2q expanded terms appended, [download](https://www.dropbox.com/s/7vsh5w6z6qgoczq/psg-train-d2q.tar.gz?dl=0)
-- `corpus-d2q`    : tokenized corpus with d2q expanded terms appended [download](https://www.dropbox.com/s/zyowiawfb8n6t91/corpus_d2q.tar.gz?dl=0)
-- `msmarco-passage-d2q`: raw collection of msmarco-passage with doc2query expansion [download](https://www.dropbox.com/s/152wvhidd0sk15h/msmarco-passage-expanded.tar.gz?dl=0)
+- `psg-train-d2q` : train data with d2q expanded terms appended, [download](https://www.dropbox.com/s/j1vp1nixn3n2yv0/psg-train-d2q.tar.gz?dl=0)
+- `corpus-d2q`    : tokenized corpus with d2q expanded terms appended [download](https://www.dropbox.com/s/aw8qwqlsbtzxcbz/corpus_d2q.tar.gz?dl=0)
+- `msmarco-passage-d2q`: raw collection of msmarco-passage with doc2query expansion [download](https://www.dropbox.com/s/2ikdxw9hbom9boj/msmarco-passage-expanded.tar.gz?dl=0)
 
 
 ## Training
