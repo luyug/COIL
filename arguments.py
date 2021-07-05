@@ -23,7 +23,7 @@ class ModelArguments:
     )
     token_dim: int = field(default=768)
     cls_dim: int = field(default=768)
-    relu: bool = field(default=False, )
+    token_rep_relu: bool = field(default=False, )
     token_norm_after: bool = field(default=False)
     cls_norm_after: bool = field(default=False)
     x_device_negatives: bool = field(default=False)

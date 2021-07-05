@@ -40,7 +40,7 @@ python run_marco.py \
   --train_group_size 8 \
   --no_cls \
   --token_dim 1 \
-  --relu \
+  --token_rep_relu \
   --warmup_ratio 0.1 \
   --learning_rate 5e-6 \
   --num_train_epochs 5 \
