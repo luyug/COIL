@@ -2,10 +2,14 @@
 Repo for our NAACL paper, [COIL: Revisit Exact Lexical Match in Information Retrieval with Contextualized Inverted List](https://arxiv.org/abs/2104.07186). The code covers learning COIL models well as encoding and retrieving with COIL index. 
 
 The code was refactored from our original experiment version to use the huggingface Trainer interface for future compatibility.
+This repo will also host variants of COIL. We welcome pull requests!
 
 ## Contextualized Exact Lexical Match
 COIL systems are based on the idea of *contextualized exact lexical match*. It replaces term frequency based term matching in classical systems like BM25 with contextualized word representation similarities. It thereby gains the ability to model matching of context. Meanwhile COIL confines itself to comparing exact  lexical matched tokens and therefore can retrieve efficiently with inverted list form data structure.  Details can be found in our [paper](https://arxiv.org/abs/2104.07186).
 
+## Updates
+- 07/06/2021 Release a [faster retriever](retriever/retriever-cb.py).
+- 07/05/2021 Merge [uniCOIL implementations](https://github.com/luyug/COIL/tree/main/uniCOIL).
 
 ## Dependencies
 The code has been tested with,
