@@ -8,7 +8,8 @@ This repo will also host variants of COIL. We welcome pull requests!
 COIL systems are based on the idea of *contextualized exact lexical match*. It replaces term frequency based term matching in classical systems like BM25 with contextualized word representation similarities. It thereby gains the ability to model matching of context. Meanwhile COIL confines itself to comparing exact  lexical matched tokens and therefore can retrieve efficiently with inverted list form data structure.  Details can be found in our [paper](https://arxiv.org/abs/2104.07186).
 
 ## Updates
-- 07/06/2021 Release a [faster retriever](retriever/retriever-cb.py).
+- 07/07/2021 Release a [substantially faster retriever](retriever#fast-retriver). Use of the original retriver is deprecated. [details](retriever#coil-retriever)
+- 07/06/2021 Release a [faster retriever](retriever#coil-retriever).
 - 07/05/2021 Merge [uniCOIL implementations](https://github.com/luyug/COIL/tree/main/uniCOIL).
 
 ## Dependencies
@@ -140,6 +141,8 @@ python run_marco.py \
 Note that here `p_max_len` always controls the maximum length of the encoded text, regardless of the input type.
 
 ## Retrieval
+To use the fast retriever, you need to [compile the extension](retriever#fast-retriver). 
+
 To do retrieval, run the following steps, 
 
 (Note that there is no dependency in the for loop within each step, meaning that if you are on a cluster, you can distribute the jobs across nodes using `srun` or `qsub`.)
@@ -168,10 +171,11 @@ python retriever/format_query.py \
 ```
 for i in $(seq -f "%02g" 0 9)  
 do  
-  python retriever/retriever-compat.py \  
+  python retriever/retriever-fast.py \  
       --query $QUERY_DIR \  
       --doc_shard $INDEX_DIR/shard_${i} \  
-      --top 1000 \  
+      --top 1000 \
+      --batch_size 512 \
       --save_to ${SCORE_DIR}/intermediate/shard_${i}.pt
 done 
 ```
@@ -186,8 +190,6 @@ python retriever/merger.py \
 python data_helpers/msmarco-passage/score_to_marco.py \  
   --score_file ${SCORE_DIR}/rank.txt
 ```
-
-Note that this compat(ible) version of retriever differs from our internal retriever. It relies on `torch_scatter` package for scatter operation so that we can have a pure python code that can easily work across platforms.  We do notice that on our system `torch_scatter` does not scale very well with number of cores. We may in the future release another faster version of retriever that requires some compiling work. 
 
 ##  Data Format
 For both training and encoding,  the core code expects pre-tokenized data.
