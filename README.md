@@ -41,6 +41,25 @@ Here we present two systems: one uses hard negatives (HN) and the other does not
  Hard negative data and model checkpoint [link](http://boston.lti.cs.cmu.edu/luyug/coil/msmarco-psg-hn/)
  
  *more to be added soon*
+ 
+## Citation
+```
+@inproceedings{gao-etal-2021-coil,
+    title = "{COIL}: Revisit Exact Lexical Match in Information Retrieval with Contextualized Inverted List",
+    author = "Gao, Luyu  and
+      Dai, Zhuyun  and
+      Callan, Jamie",
+    booktitle = "Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
+    month = jun,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.naacl-main.241",
+    doi = "10.18653/v1/2021.naacl-main.241",
+    pages = "3030--3042",
+}
+```
+ 
 ## Usage
 The following sections will work through how to use this code base to train and retrieve over the MSMARCO passage ranking data set.
 ## Training
