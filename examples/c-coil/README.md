@@ -1,7 +1,7 @@
 # C-COIL
 C-COIL (working title) aims at improving vanilla COIL systems with improved model initialization. To learn more about COIL architecture, you can read [our paper](https://arxiv.org/abs/2104.07186) or take a look around this repo.
 
-C-COIL has zero added fine-tuninig/inference cost but only replaces the BERT initializer.
+C-COIL has zero added fine-tuninig/inference cost but only replaces the BERT initializer. (The initializer paper is currently under review; we will release model weights as soon as the review period ends. You can email us to request a private copy.)
 
 As of 7/27/2021, C-COIL retrieval system is the top run on MS-MARCO passage ranking leaderboard.
 | Date  | Submission Name |  Dev MRR@10 | Eval MRR@10  |
