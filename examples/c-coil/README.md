@@ -4,13 +4,16 @@ C-COIL (working title) aims at improving vanilla COIL systems with improved mode
 It has zero added fine-tuninig/inference cost but only requires replacing BERT initializer.
 
 As of 7/27/2021, C-COIL retrieval system is the top run on MS-MARCO passage ranking leaderboard.
+| Date  | Submission Name |  Dev MRR@10 | Eval MRR@10  |
+|---|---|---|---|
+| 2021/07/14 | C-COIL + RoBERTa  | 0.443 | 0.427 |
 
 ## Resource 
 
 
 | Configuration | MARCO DEV MRR@10 | TREC DL19 NDCG@5 | TREC DL19 NDCG@10 | Chekpoint | MARCO Train Ranking | MARCO Dev Ranking |
 | --- | :---: |  :---: | :---: | :---: | :---: | :---: | 
-| C-COIL w/ HN    | 0.3734       | 0.749      | 0.726       | checkpoint.tar.gz |  [train-ranking.tar.gz](http://boston.lti.cs.cmu.edu/luyug/c-coil/train-ranking.tar.gz)       | [dev-ranking.tsv](http://boston.lti.cs.cmu.edu/luyug/c-coil/dev-ranking.tsv)    
+| C-COIL w/ HN    | 0.3734       | 0.749      | 0.726       | checkpoint.tar.gz |  [train-ranking.tar.gz](http://boston.lti.cs.cmu.edu/luyug/c-coil/train-ranking.tar.gz)       | [dev-ranking.tsv](https://boston.lti.cs.cmu.edu/luyug/c-coil/dev-ranking.tsv)    
 
 To save compute, we did the following,
 - Use COIL-bm25 results as hard negatives
@@ -69,7 +72,7 @@ python run_marco.py \
 We used the [reranker toolkit](https://github.com/luyug/Reranker). Details to be added.
 
 ## Inference  
-C-COIL follws the same inference setup as COIL. You can find detailed explanation on the homepage.
+C-COIL follws the same inference setup as COIL. You can find detailed explanation on the [homepage](/README.md#encoding).
 
 ```
 for i in $(seq -f "%02g" 0 99)  
@@ -93,4 +96,4 @@ do
 done
 ```
 
-For retrival, see the [retriever page](retriever).
+For retrival, see the [retriever page](../../retriever).
